@@ -1,0 +1,21 @@
+spring:
+  # 数据库连接配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/account_book?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&characterEncoding=utf8mb4
+    username: root       # 你的MySQL用户名
+    password: root       # 你的MySQL密码
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA 配置
+  jpa:
+    hibernate:
+      ddl-auto: update  # 自动更新表结构 (create, create-drop, update, validate, none)
+    show-sql: true      # 在控制台打印执行的SQL语句
+    properties:
+      hibernate:
+        format_sql: true # 格式化SQL语句，便于查看
+        dialect: org.hibernate.dialect.MySQL8Dialect # 指定MySQL方言
+
+# 服务器端口配置
+server:
+  port: 8080
